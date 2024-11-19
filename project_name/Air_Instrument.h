@@ -12,7 +12,7 @@ la distance au capteur va définir la note jouée par le buzzer
 #include "Instrument.h"
 
 class Air_Instrument : public Instrument {
-// friend class NoteAirInstrument ;
+friend class NoteAirInstrument ;
 protected :
 
 public :

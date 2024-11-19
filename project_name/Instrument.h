@@ -8,7 +8,7 @@ Défini un intrument pour lequel on récupère l'angle ou la distance qui va per
 
 
 class Instrument {
-
+friend class note_air_instrument ;
 protected :
 float mesure ; 
 char type_mesure ;
