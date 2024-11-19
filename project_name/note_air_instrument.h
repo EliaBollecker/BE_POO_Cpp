@@ -8,6 +8,7 @@
 
 #include "note.h"
 #include "Air_Instrument.h" 
+#include "Instrument.h" 
 #include <iostream>
 
 using namespace std ; 
