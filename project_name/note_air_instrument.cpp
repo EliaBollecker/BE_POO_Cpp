@@ -8,13 +8,12 @@
 
 //using namespace NoteAirInstrument ; 
 
-NoteAirInstrument::NoteAirInstrument(){
-    this->mesure=Instrument::mesure ; 
+NoteAirInstrument::NoteAirInstrument(float mesure):Note(mesure){
+    
 }
 
 float NoteAirInstrument::getNote(){
-    this->mesure = Instrument::mesure ; 
-
+    //this->mesure = instrument.mesure ; 
     if (mesure<0){
         cout<<"problem"<<endl ; 
         return 0.0 ; 
