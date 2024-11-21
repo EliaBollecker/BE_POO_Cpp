@@ -10,7 +10,7 @@
 //la class note permet de définir toutes les constantes des notes jouables en fréquences (Hz)
 class Note {
     protected : 
-    //notes 
+    //definition des frequences des notes en Hz
         float const do1 = 261.63; 
         float const re = 293.66; 
         float const mi = 329.63 ; 
@@ -22,7 +22,7 @@ class Note {
     //mesure 
         float mesure ; 
     public : 
-
+        Note(float mesure){this->mesure=mesure ; } 
         virtual float getNote() = 0 ; //methode abstraite permettant d'avoir la note en fonction de la mesure 
 
 };
