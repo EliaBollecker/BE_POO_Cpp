@@ -20,9 +20,9 @@ class Note {
         float const si = 493.88; 
         float const do2 = 523.25; 
     //mesure 
-        float mesure ; 
+        long mesure ; 
     public : 
-        Note(float mesure){this->mesure=mesure ; } 
+        Note(long mesure){this->mesure=mesure ; } 
         virtual float getNote() = 0 ; //methode abstraite permettant d'avoir la note en fonction de la mesure 
 
 };

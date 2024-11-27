@@ -19,7 +19,7 @@ void Reccord::enregistrer() {
     for (dim=0 ; dim<10 ; dim++){ //a cahnger avec le bouton 
         Partition.push(instrument->lierNoteMesure()); 
         this_thread::sleep_for(chrono::seconds(2)) ; //attendre 2s avant le prochain enregsitrement 
-        instrument->setMesure(25) ; //pour le test 
+        //instrument->setMesure(25) ; //pour le test 
     }
 }
 void Reccord::jouer()  {

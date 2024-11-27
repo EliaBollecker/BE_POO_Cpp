@@ -8,7 +8,7 @@
 
 //using namespace NoteAirInstrument ; 
 
-NoteAirInstrument::NoteAirInstrument(float mesure):Note(mesure){
+NoteAirInstrument::NoteAirInstrument(long mesure):Note(mesure){
     
 }
 
