@@ -8,6 +8,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono> 
+//#include "GroveBuzzer.h" 
 
 using namespace std ; 
 
@@ -26,6 +27,7 @@ void Reccord::jouer()  {
     //int dim_prov = 0 ; 
     while(!Partition.empty()){
         cout<<Partition.front()<<endl ; //a remplacer par envoyer au buzzer 
+        //tone(0,Partition.front()) ;//D3=GPIO0 
         Partition.pop() ; 
         
     }
