@@ -10,10 +10,9 @@ class AirInstrument : public Instrument {
 protected :
 
 public :
-  AirInstrument();
-  float get_mesure();
   friend class NoteAirInstrument ; 
-  void mesurerDistance() ; //sert a stocker le resultat renvoye par le capteur /*A FAIRE */
+  AirInstrument();
+  void mesureCapteur();//sert a stocker le resultat renvoye par le capteur dans la variable mesure
   float lierNoteMesure() ; //sert a renvoyer une note de musique grace a la distance 
   //friend NoteAirInstrument::NoteAirInstrumsent() ; 
 };

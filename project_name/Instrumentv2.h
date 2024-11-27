@@ -4,12 +4,12 @@
 class Instrument {
 
     protected :
-        float mesure ; 
+        long mesure ; 
         char type_mesure ;
     
     public :    
         Instrument() ;
-        virtual float get_mesure()=0;
+        virtual void mesureCapteur()=0;
         char get_type_mesure();
         virtual float lierNoteMesure() =0 ; 
         
