@@ -17,21 +17,21 @@ Reccord::Reccord(Instrument * instrument) {
 
 void Reccord::enregistrer() {
     for (dim=0 ; dim<10 ; dim++){ //a cahnger avec le bouton 
-        Partition.push_back(instrument->lierNoteMesure()); 
+        Partition.push(instrument->lierNoteMesure()); 
         this_thread::sleep_for(chrono::seconds(2)) ; //attendre 2s avant le prochain enregsitrement 
         instrument->setMesure(25) ; //pour le test 
     }
 }
 void Reccord::jouer()  {
-    int dim_prov = 0 ; 
-    while(dim_prov < dim){
-         
-        cout<<Partition.at(dim_prov)<<endl ; //a remplacer par envoyer au buzzer 
-        dim_prov++ ;
+    //int dim_prov = 0 ; 
+    while(!Partition.empty()){
+        cout<<Partition.front()<<endl ; //a remplacer par envoyer au buzzer 
+        Partition.pop() ; 
+        
     }
 }
 
-vector<float> Reccord::getParittion() {
+queue<float> Reccord::getParittion() {
     return Partition ; 
 }
     
@@ -40,5 +40,8 @@ int Reccord::getDim(){
 }
 Reccord::~Reccord() {
     //delete instrument ; 
-    Partition.clear() ;  
+    while(!Partition.empty()){
+        Partition.pop() ; 
+    }
+    //Partition.clear() ;  
 }
