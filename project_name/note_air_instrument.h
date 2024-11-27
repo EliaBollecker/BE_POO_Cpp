@@ -17,7 +17,7 @@ class NoteAirInstrument : public Note {
     protected : 
 
     public : 
-        NoteAirInstrument(float mesure ) ; //initilise une nouvelle note jouer par un air Instrument avec une mesure 
+        NoteAirInstrument(long mesure ) ; //initilise une nouvelle note jouer par un air Instrument avec une mesure 
         float getNote() ; //traduit la distance mesuree en note 
 
 }; 
