@@ -15,7 +15,8 @@ NoteAirInstrument::NoteAirInstrument(long mesure):Note(mesure){
 float NoteAirInstrument::getNote(){
     //this->mesure = instrument.mesure ; 
     if (mesure<0){
-        cout<<"problem"<<endl ; 
+        //cout<<"problem"<<endl ; 
+         Serial.println("Problem distance trop petite" ) ;
         return 0.0 ; 
     }
     else if (mesure <= 5.00){
@@ -43,11 +44,8 @@ float NoteAirInstrument::getNote(){
         return do2 ; 
     }
     else {
-        cout<<"problem 2"<<endl ; 
+        //cout<<"problem 2"<<endl ; 
+        Serial.println("Problem distance trop grande" ) ; 
         return 0.0 ; 
     }
 }
-
-
-
-

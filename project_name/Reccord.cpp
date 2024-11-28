@@ -5,20 +5,24 @@
  *********************************************************************/
 
 #include "reccord.h" 
-#include <iostream>
-#include <thread>
-#include <chrono> 
+//#include <iostream>
+//#include <thread>
+//#include <chrono> 
+#include <Arduino.h>
 //#include "GroveBuzzer.h" 
 
 using namespace std ; 
 
-Reccord::Reccord(Instrument * instrument) {
+cppQueue Reccord::Partition(sizeof(float),10,LIFO,false,NULL,0) ;
+
+Reccord::Reccord(Instrument * instrument){
     this->instrument=instrument ; 
 }
 
 void Reccord::enregistrer() {
     for (dim=0 ; dim<10 ; dim++){ //a cahnger avec le bouton 
-        Partition.push(instrument->lierNoteMesure()); 
+        float  var =instrument->lierNoteMesure() ; 
+        bool p=Partition.push(&var); 
         //this_thread::sleep_for(chrono::seconds(2)) ; //attendre 2s avant le prochain enregsitrement 
         delay(2000) ; 
         //instrument->setMesure(25) ; //pour le test 
@@ -26,15 +30,22 @@ void Reccord::enregistrer() {
 }
 void Reccord::jouer()  {
     //int dim_prov = 0 ; 
-    while(!Partition.empty()){
-        cout<<Partition.front()<<endl ; //a remplacer par envoyer au buzzer 
-        //tone(0,Partition.front()) ;//D3=GPIO0 
-        Partition.pop() ; 
+    while(!Partition.isEmpty()){
+        //cout<<Partition.front()<<endl ; //a remplacer par envoyer au buzzer 
+        //Partition.pop() ; 
+        float var ; 
+        bool p=Partition.pop(&var) ; 
+        Serial.println(var) ; 
+        tone(0,var,2000) ;//D3=GPIO0 
+        delay(2000) ; 
+        noTone(0) ; 
+        
+        
         
     }
 }
 
-queue<float> Reccord::getParittion() {
+cppQueue Reccord::getParittion() {
     return Partition ; 
 }
     
@@ -43,8 +54,9 @@ int Reccord::getDim(){
 }
 Reccord::~Reccord() {
     //delete instrument ; 
-    while(!Partition.empty()){
-        Partition.pop() ; 
-    }
+    /*while(!Partition.isEmpty()){
+        bool p=Partition.pop() ; 
+    }*/
+    Partition.clean() ; 
     //Partition.clear() ;  
 }

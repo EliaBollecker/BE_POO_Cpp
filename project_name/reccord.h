@@ -1,3 +1,4 @@
+
 /*********************************************************************
  * @file  reccord.h
  * @author <Elia Bollecker-Fevre et Elise Weltzer>
@@ -7,14 +8,18 @@
 #ifndef RECCORD_H
 #define RECCORD_H
 
-#include <queue> 
+#include <cppQueue.h>
 #include "note_air_instrument.h"
+#include <Arduino.h>
 
 using namespace std ; 
 
 class Reccord {
     private : 
-        queue<float> Partition ; //queue ou sont stockee les notes en Hz  
+        //queue<float> Partition ; //queue ou sont stockee les notes en Hz  
+        const size_t taille= sizeof(float) ; 
+        //cppQueue Partition; //(taille, 10, LIFO, false) ; 
+        static cppQueue Partition ; //definition en statique pour que la cppSQueue marche sur l'Arduino sinon erreurs imposible à resoudre (même chatgpt n'a pas su)
         int dim  ; //dimension du vector 
         Instrument * instrument ; // instrument en train d'enregsitrer
     public : 
@@ -22,7 +27,7 @@ class Reccord {
         void enregistrer() ; //enregistre une sequence de 10 notes dans un vecteur 
         void jouer() ; //permet d'AFFICHER les frequences des notes enregistrees 
 
-        queue<float> getParittion() ; //getter du vecteur de note 
+        cppQueue getParittion() ; //getter du vecteur de note 
         int getDim() ; //getter de la dimension 
         ~Reccord() ; //destructeur 
 

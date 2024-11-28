@@ -5,20 +5,21 @@
  *********************************************************************/
 #ifndef NOTE_H
 #define NOTE_H
-#include <iostream>
+//#include <iostream>
+#include <Arduino.h>
 
 //la class note permet de définir toutes les constantes des notes jouables en fréquences (Hz)
 class Note {
     protected : 
     //definition des frequences des notes en Hz
-        float const do1 = 261.63; 
-        float const re = 293.66; 
-        float const mi = 329.63 ; 
-        float const fa = 349.23; 
-        float const sol  = 392; 
-        float const la = 440 ; 
-        float const si = 493.88; 
-        float const do2 = 523.25; 
+        float const do1 = 523; 
+        float const re = 587; 
+        float const mi = 659; 
+        float const fa = 698; 
+        float const sol  = 784; 
+        float const la = 880 ; 
+        float const si =988; 
+        float const do2 = 1047; 
     //mesure 
         long mesure ; 
     public : 

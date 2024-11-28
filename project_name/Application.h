@@ -6,6 +6,10 @@
 #ifndef APPLICATION_H_
 #define APPLICATION_H_
 
+//#include <Arduino.h>
+#include "AirInstrument.h"
+#include "reccord.h" 
+
 /**
   * @class Application
   * @brief Classe Application 

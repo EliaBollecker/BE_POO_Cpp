@@ -4,6 +4,8 @@
  * @brief Fichier source de l'application
  *********************************************************************/
 #include "Application.h"
+#include <cppQueue.h>
+
 
 
 Application::Application()
@@ -20,13 +22,16 @@ Application::~Application()
 
 void Application::init(void)
 {
-  // Code
-    ;
+  Serial.begin(9600);
+  noTone(0) ; 
 }
 
 
 void Application::run(void)
 {
-  // Code
-    ;
+  AirInstrument AI ;
+  Reccord Sauv(&AI) ; 
+  Sauv.enregistrer() ; 
+  Sauv.jouer() ;  
+  
 }
