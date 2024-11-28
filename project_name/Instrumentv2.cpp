@@ -1,3 +1,10 @@
+/*********************************************************************
+ * @file  Instrument.cpp
+ * @author <Elia Bollecker-Fevre et Elise Weltzer>
+ * @brief Fichier code de Instrument, défini un instrument, sa mesure, son type de mesure (angle ou distance)
+ *********************************************************************/
+
+
 #include "Instrumentv2.h"
 
 Instrument::Instrument(){

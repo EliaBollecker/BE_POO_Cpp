@@ -1,3 +1,10 @@
+/*********************************************************************
+ * @file  Instrument.h
+ * @author <Elia Bollecker-Fevre et Elise Weltzer>
+ * @brief Fichier HEADER de Instrument, défini un instrument, sa mesure, son type de mesure
+ *********************************************************************/
+
+
 #ifndef INSTRUMENT_H
 #define INSTRUMENT_H
 
