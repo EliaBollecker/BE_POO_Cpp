@@ -15,7 +15,7 @@
 
 float NotePotentioInstrument::getNote(){
     if (mesure<0){
-        cout<<"problem"<<endl ; 
+        Serial.println("Problem distance trop petite" ) ;
         return 0.0 ; 
     }
     else if (mesure <= 37){
@@ -43,7 +43,7 @@ float NotePotentioInstrument::getNote(){
         return do2 ; 
     }
     else {
-        cout<<"problem 2"<<endl ; 
+        Serial.println("Problem distance trop grande" ) ;
         return 0.0 ; 
     }
 }

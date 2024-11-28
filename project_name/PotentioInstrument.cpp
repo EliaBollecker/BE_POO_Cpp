@@ -19,14 +19,18 @@
 // met à jour la variable mesure avec l'angle actuel mesuré par le potentiomètre
  void PotentioInstrument:: mesureCapteur(){
     long voltage ;
-    int sensor_value=analogRead(ROTARY_ANGLE_SENSOR); // on lit valeur analogique retournée par le potentio
+    float test ; 
+    long sensor_value=analogRead(ROTARY_ANGLE_SENSOR); // on lit valeur analogique retournée par le potentio //PROBLEM ANALOG_READ
+    Serial.println(sensor_value) ; 
     voltage=(long)sensor_value*ADC_REF/1023;
-    mesure=(voltage*FULL_ANGLE)/GROVE_VCC ;
+    test=(voltage*FULL_ANGLE)/GROVE_VCC ;
+    mesure=(long) test ; 
  }
 
  // renvoie la note associée à l'angle mesuré
  float PotentioInstrument:: lierNoteMesure() {
     mesureCapteur(); // on met à jour la variable mesure avec l'angle actuel
     NotePotentioInstrument NPI(mesure);
+    Serial.println(mesure) ; 
 return (NPI.getNote()) ;
  }

@@ -9,6 +9,7 @@
 //#include <Arduino.h>
 #include "AirInstrument.h"
 #include "reccord.h" 
+#include "PotentioInstrument.h"
 
 /**
   * @class Application

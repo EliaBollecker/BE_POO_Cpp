@@ -29,7 +29,7 @@ void Application::init(void)
 
 void Application::run(void)
 {
-  AirInstrument AI ;
+  PotentioInstrument AI ;
   Reccord Sauv(&AI) ; 
   Sauv.enregistrer() ; 
   Sauv.jouer() ;  

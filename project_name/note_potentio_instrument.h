@@ -11,7 +11,7 @@
 #include "note.h"
 #include "PotentioInstrument.h" 
 #include "Instrumentv2.h" 
-#include <iostream>
+//#include <iostream>
 
 using namespace std ; 
 
