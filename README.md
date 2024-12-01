@@ -1,11 +1,2 @@
-# BE_POO_Template
-Projet de base pour Ardouino
-
-
-
-#class note 
-#variables : 
-- la int = 440 Hz
-
-#méthodes :
-+ getnote() float (freq en Hz)  
+# Rapport de Projet : Réalisation d'instruments à l'aide d'un capteur ultrason et d'un potentiomètre
+Elise Weltzer et Elia Bollecker
