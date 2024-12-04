@@ -19,6 +19,7 @@ Etapes à Suivre :
 2. Le bouton touch sensor permet de sélectionner le mode d'instrument : appuyer pour séléctionner l'instrument potentio sinon, l'instrument capteur ultrason sera selectionné par défaut
 3. Utiliser le capteur pour jouer les notes, une séquence de 10 notes peut être réalisée
 --> tourner le potentiomètre pour jouer les différentes notes
-
+--> rapprocher ou éloigner sa main du capteur ultrason pour jouer différentes notes
+4. La séquence de 10 notes est enregistrée en parallèle et rejouée par le buzzer
 
 
