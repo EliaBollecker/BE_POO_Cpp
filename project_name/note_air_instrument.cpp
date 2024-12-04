@@ -16,7 +16,8 @@ float NoteAirInstrument::getNote(){
     //this->mesure = instrument.mesure ; 
     if (mesure<0){
         //cout<<"problem"<<endl ; 
-         Serial.println("Problem distance trop petite" ) ;
+         //Serial.println("Problem distance trop petite" ) ;
+         throw err1 ; 
         return 0.0 ; 
     }
     else if (mesure <= 5.00){
@@ -46,6 +47,7 @@ float NoteAirInstrument::getNote(){
     else {
         //cout<<"problem 2"<<endl ; 
         Serial.println("Problem distance trop grande" ) ; 
+        throw err2; 
         return 0.0 ; 
     }
 }

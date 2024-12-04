@@ -11,10 +11,7 @@
 #include "Instrumentv2.h"
 #include "note_potentio_instrument.h"
 
-#define ROTARY_ANGLE_SENSOR 12  // pin du potention D6=GPIO12
-//#define ADC_REF 3.3 //5             // voir si c'est pas du 3.3V
-//#define GROVE_VCC 5.0           // VCC du potention
-//#define FULL_ANGLE 300.0         // angle max du potentio
+#define ROTARY_ANGLE_SENSOR A0  // pin du potention A0=ADC0
 
 class PotentioInstrument : public Instrument {
 
