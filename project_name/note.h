@@ -22,6 +22,11 @@ class Note {
         float const do2 = 1047; 
     //mesure 
         long mesure ; 
+    //erreur 
+        static const int err1=1 ; //problème dans la mesure de distance : distance négative avec ultrasonic ranger 
+        static const int err2=2 ; //problème dans la mesure de ditance : distance trop grande avec ultrasonic ranger 
+        static const int err3=3 ; //problème dans la mesure de l'angle : angle négatif avec potetiomètre
+        static const int err4=4 ; //problème dans la mesure de l'angle : angle >198 cad limite maxdu potentiomètre
     public : 
         Note(long mesure){this->mesure=mesure ; } 
         virtual float getNote() = 0 ; //methode abstraite permettant d'avoir la note en fonction de la mesure 

@@ -16,9 +16,11 @@ void AirInstrument::mesureCapteur(){
 
 //envoie la mesure retournée par le capteur pour traduire la distance en note (en fréquence) pour l'envoyer à la sono 
 float AirInstrument::lierNoteMesure() {
+    noTone(0) ; 
     mesureCapteur();
     NoteAirInstrument NAI(mesure); 
     //cout<<NAI.getNote()<<endl  ; 
+    tone(0,NAI.getNote()) ; 
     return (NAI.getNote()) ; 
 }
 

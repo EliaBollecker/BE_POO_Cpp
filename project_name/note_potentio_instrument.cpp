@@ -15,35 +15,37 @@
 
 float NotePotentioInstrument::getNote(){
     if (mesure<0){
-        Serial.println("Problem distance trop petite" ) ;
+        //Serial.println("Problem distance trop petite" ) ;
+        throw err3 ; 
         return 0.0 ; 
     }
-    else if (mesure <= 37){
+    else if (mesure <= 24){
         return do1 ; 
     }
-    else if (mesure <= 74){
+    else if (mesure <= 48){
         return re ; 
     }
-    else if (mesure <= 111){
+    else if (mesure <= 72){
         return mi ; 
     }
-    else if (mesure <= 148){
+    else if (mesure <= 96){
         return fa ; 
     }
-     else if (mesure <= 185){
+     else if (mesure <= 120){
         return sol ; 
     }
-    else if (mesure <= 222){
+    else if (mesure <= 145){
         return la ; 
     }
-     else if (mesure <= 259){
+     else if (mesure <= 170){
         return si ; 
     }
-    else if (mesure <= 300){
+    else if (mesure <= 198){
         return do2 ; 
     }
     else {
-        Serial.println("Problem distance trop grande" ) ;
+        //Serial.println("Problem distance trop grande" ) ;
+        throw err4; 
         return 0.0 ; 
     }
 }

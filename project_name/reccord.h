@@ -16,6 +16,7 @@ using namespace std ;
 
 class Reccord {
     private : 
+        static const int err5=5 ; //problème dans l'enregistrement de la séquence : pas de notes enregistrée
         //queue<float> Partition ; //queue ou sont stockee les notes en Hz  
         const size_t taille= sizeof(float) ; 
         //cppQueue Partition; //(taille, 10, LIFO, false) ; 

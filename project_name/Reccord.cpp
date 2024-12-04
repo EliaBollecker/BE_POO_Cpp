@@ -29,9 +29,10 @@ void Reccord::enregistrer() {
     }
 }
 void Reccord::jouer()  {
-    //int dim_prov = 0 ; 
+    if (Partition.isEmpty()){
+      throw err5 ; 
+    }
     while(!Partition.isEmpty()){
-        //cout<<Partition.front()<<endl ; //a remplacer par envoyer au buzzer 
         //Partition.pop() ; 
         float var ; 
         bool p=Partition.pop(&var) ; 
@@ -39,8 +40,6 @@ void Reccord::jouer()  {
         tone(0,var,2000) ;//D3=GPIO0 
         delay(2000) ; 
         noTone(0) ; 
-        
-        
         
     }
 }
